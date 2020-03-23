@@ -1,6 +1,6 @@
 <section id="login-page">
 <div class="container">
-    <div class="row">
+    <div class="row m-3">
         <div class="col-12">
             <h3 class="login-heading mb-4">Welcome back!</h3>
             <form>

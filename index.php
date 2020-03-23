@@ -12,17 +12,24 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="sections/landing.css" class="ref">
   <link rel="stylesheet" href="sections/login.css" class="ref">
-  <title>Hello, world!</title>
+  <link rel="stylesheet" href="sections/footer.css" class="ref">
+  <title>AG Store</title>
 </head>
 
 <body>
   <?php
-  include "sections/navBar.php";
-  include "sections/landing.php";
-  include "sections/login.php";
-  include "sections/products.php";
-  include "sections/product-details.php";
-  include "sections/cart.php";
+    require_once "sections/navBar.php";
+    require_once "sections/landing.php";
+    require "sections/divider.php";
+    require_once "sections/login.php";
+    require "sections/divider.php";
+    require_once "sections/products.php";
+    require "sections/divider.php";
+    require_once "sections/product-details.php";
+    require "sections/divider.php";
+    require_once "sections/cart.php";
+    require "sections/divider.php";
+    require_once "sections/footer.php";
   ?>
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
