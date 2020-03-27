@@ -1,11 +1,3 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
-
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-
 <!--footer starts from here-->
 <footer class="footer">
     <div class="container bottom_border">
@@ -17,10 +9,7 @@
                 <p><i class="fa fa-location-arrow"></i> 9878/25 sec 9 rohini 35 </p>
                 <p><i class="fa fa-phone"></i> +91-9999878398 </p>
                 <p><i class="fa fa fa-envelope"></i> info@example.com </p>
-
-
             </div>
-
 
             <div class=" col-sm-4 col-md  col-6 col">
                 <h5 class="headin5_amrc col_white_amrc pt2">Quick links</h5>

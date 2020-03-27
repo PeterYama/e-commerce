@@ -13,6 +13,9 @@ $(document).ready(function () {
         });
     })
 
+    $('.carousel').carousel({
+        interval: 1000
+      })
     // $('#target').ajaxSubmit(function () {
     //     alert("Thank you for your comment!");
     // });

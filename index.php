@@ -21,22 +21,24 @@ if (mysqli_connect_errno()) {
   <!-- JQuery comands here  -->
   <script src="myscripts.js"></script>
 
-  <!-- fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Gugi&display=swap" rel="stylesheet">
-  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+  
 
   <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
   <link rel="stylesheet" href="sections/landing.css" class="ref">
   <link rel="stylesheet" href="sections/login.css" class="ref">
   <link rel="stylesheet" href="sections/footer.css" class="ref">
+
+  <!-- fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Gugi&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
   <title>AG Store</title>
 </head>
 
 <body>
   <?php
   require_once "sections/navBar.php";
-  // require_once "sections/landing.php";
+  require_once "sections/landing.php";
   require "sections/divider.php";
   require_once "sections/login.php";
   require "sections/divider.php";
@@ -70,8 +72,9 @@ if (mysqli_connect_errno()) {
   <div class="container">
     <button class="btn btn-primary">Click here</button>
   </div>
-  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 
 </html>

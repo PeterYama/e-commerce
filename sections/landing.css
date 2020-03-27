@@ -5,6 +5,7 @@ header {
   min-height: 25rem;
   width: 100%;
   overflow: hidden;
+
 }
 
 
@@ -15,6 +16,10 @@ header {
 
 .description{
   font-family: 'Lato', sans-serif;
+}
+
+.body{
+  font-size: 1.2rem;
 }
 
 header video {
