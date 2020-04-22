@@ -1,36 +1,35 @@
 <?php
 
+require_once 'ajax/db_connection.php';
+
+// Db controller inherits the connection
 class db_Controller extends db_Connection{
-    
-    function getAllUsers(){
-        $sql = "SELECT * FROM Users";
-        $result = $this->connect()->query($sql);
-        $numRows = $result->num_rows;
-        if ($numRows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
-            }
-            return $data;
-        }
+
+    private $conn;
+    //constructor call the parent constructor that has the connection
+    function __construct(){
+        parent::__construct();
+        $this->conn = $this->getConnection();
     }
 
-    function getUser($UserName){
-        $sql = "SELECT * FROM `users` WHERE FirstName = '$UserName'";
-        echo $sql;
-        echo '<br>';
-        $result = $this->connect()->query($sql);
-        $numRows = $result->num_rows;
-        if ($numRows > 0) {
-            while ($row = $result->fetch_assoc()) {
-                $data[] = $row;
-            }
-            return print_r($data);
-            // $data;
-        }else{
-            echo 'user does not exist';
-        }
+    public function read($sql){
+        $result = $this->conn->query($sql);
+        return $result;
+    }
+ 
+    public function write($sql){
+        echo "sql statment inside write:" . $sql;
+        if ($this->conn->query($sql)) {
+            echo "New record created successfully";
+         } else {
+            echo "Error: " . $sql . "" . mysqli_error($this->conn);
+         }
+    }
+    public function update(){
+        echo "inside read <br>";
+    }
+    public function delete(){
+        echo "inside read <br>";
     }
     
 }
-
-//SELECT * FROM `users` WHERE FirstName = "Peter"

@@ -1,16 +1,26 @@
 <?php
-class db_Connection {
+	class db_Connection {
 
-	private $dbhost = 'localhost';
-	private $dbuser = 'root';
-	private $dbpass = '';
-	private $dbname = 'ag_games';
+	private $dbhost; 
+	private $dbuser; 
+	private $dbpass; 
+	private $dbname; 
+	private $conn;
+	
+		function __construct(){
+			$this->dbhost = 'localhost';
+			$this->dbuser = 'root';
+			$this->dbpass = '123';
+			$this->dbname = 'ag_games';
+			$this->getConnection();
+		}
 
-	protected function connect(){
-		$conn = new mysqli($this->dbhost,$this->dbuser,$this->dbpass,$this->dbname);
-		// $conn = new mysqli('localhost','root','','ag_games');
-		return $conn;
+		public function getConnection(){
+			$this->conn = new mysqli($this->dbhost,$this->dbuser,$this->dbpass,$this->dbname);
+			return $this->conn;
+		}
+
 	}
-}
-
+		
+	
 ?>
