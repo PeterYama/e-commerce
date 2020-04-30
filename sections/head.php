@@ -9,9 +9,9 @@
 <script src="myscripts.js"></script>
 <!-- Bootstrap CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
-<link rel="stylesheet" href="sections/landing.css" class="ref">
-<link rel="stylesheet" href="sections/login.css" class="ref">
-<link rel="stylesheet" href="sections/footer.css" class="ref">
+<link rel="stylesheet" href="./css/landing.css" class="ref">
+<link rel="stylesheet" href="./css/login.css" class="ref">
+<link rel="stylesheet" href="./css/footer.css" class="ref">
 
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Gugi&display=swap" rel="stylesheet">

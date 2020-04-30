@@ -1,13 +1,9 @@
 
-
-
-
-
 <section id="login-page">
     <div class="container">
         <div class="row m-3">
             <div class="col-12">
-                <h3 class="login-heading mb-4">Welcome back!</h3>
+                <h3 class="login-heading mb-4">Login</h3>
                 <form id="target" action="userLogin.php" method="post">
                     <div class="form-label-group">
                         <input type="email" id="inputEmail" name="userName" 

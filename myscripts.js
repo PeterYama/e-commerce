@@ -13,7 +13,6 @@ $(document).ready(function () {
     $('.carousel').carousel({
         interval: 1000
       })
-
 });
 // user login 
 $(document).ready(function (){

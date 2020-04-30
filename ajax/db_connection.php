@@ -1,4 +1,5 @@
 <?php
+
 	class db_Connection {
 
 	private $dbhost; 
@@ -21,6 +22,4 @@
 		}
 
 	}
-		
-	
 ?>
