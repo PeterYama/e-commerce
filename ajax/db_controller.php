@@ -19,14 +19,14 @@ class db_Controller extends db_Connection
         if ($result->num_rows > 0) {
             // output data of each row
             while($row = $result->fetch_assoc()) {
-                        echo '<div class="col-lg-4 col-md-6 mb-4">';
+                        echo '<div class="col-lg-4 col-md-6 mb-4 productCard" id="ProductID_'.$row['P_ID'].'">';
                         echo '  <div class="card h-100">';
                         echo '        <a href="#"><img class="card-img-top" src="'.$row['P_Image'].'" alt=""></a>';
                         echo '        <div class="card-body">';
                         echo '          <h4 class="card-title">';
                         echo '            <a href="#">'.$row['P_Name'].'</a>';
                         echo '          </h4>';
-                        echo '          <h5>$24.99</h5>';
+                        echo '          <h5>$'.$row['P_Price'].' AUD</h5>';
                         echo '          <p class="card-text">'.$row['P_Description'].'</p>';
                         echo '        </div>';
                         echo '        <div class="card-footer">';
@@ -38,9 +38,7 @@ class db_Controller extends db_Connection
             } else {
                 echo "0 results";
         }
-  
     }
-       
 
     public function writeStmt($email, $password)
     {
