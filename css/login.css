@@ -2,14 +2,39 @@
     --input-padding-x: 1.5rem;
     --input-padding-y: 0.75rem;
   }
+
+#login-page{
+  height:100%;
+}
+
+section {
+  width: 100%;
+  padding: 0 7%;
+  display: table;
+  margin: 0;
+  max-width: none;
+  background-color: #373B44;
+  height: 100vh;
+  background-image:url(./../images/login-background.png);
   
+  }
+
+  section:nth-of-type(2n) {
+    background-color: #FE4B74;
+  }
+
+  .form-row{
+    margin-top: 20rem;
+    width:50rem;
+  }
   .login,
   .image {
     min-height: 100vh;
   }
   
   .bg-image {
-    background-image: url('https://images.unsplash.com/photo-1469594292607-7bd90f8d3ba4?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=600&h=1200&fit=crop&ixid=eyJhcHBfaWQiOjF9');
+    background-image: url('');
+    background-color: black;
     background-size: cover;
     background-position: center;
   }
@@ -28,6 +53,7 @@
   .form-label-group {
     position: relative;
     margin-bottom: 1rem;
+
   }
   
   .form-label-group>input,
@@ -42,7 +68,6 @@
     top: 0;
     left: 0;
     display: block;
-    width: 100%;
     margin-bottom: 0;
     /* Override default `<label>` margin */
     line-height: 1.5;
@@ -54,26 +79,7 @@
     transition: all .1s ease-in-out;
   }
   
-  .form-label-group input::-webkit-input-placeholder {
-    color: transparent;
-  }
-  
-  .form-label-group input:-ms-input-placeholder {
-    color: transparent;
-  }
-  
-  .form-label-group input::-ms-input-placeholder {
-    color: transparent;
-  }
-  
-  .form-label-group input::-moz-placeholder {
-    color: transparent;
-  }
-  
-  .form-label-group input::placeholder {
-    color: transparent;
-  }
-  
+
   .form-label-group input:not(:placeholder-shown) {
     padding-top: calc(var(--input-padding-y) + var(--input-padding-y) * (2 / 3));
     padding-bottom: calc(var(--input-padding-y) / 3);

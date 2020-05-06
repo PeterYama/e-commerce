@@ -1,0 +1,7 @@
+.img-responsive{
+    max-width: 20rem;
+}
+.button-container{
+    align-items: flex-end;
+    justify-content: right;
+}
