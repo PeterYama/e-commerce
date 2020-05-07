@@ -1,8 +1,10 @@
 <?php
+  session_start();
   require_once './navBar.php';
   require_once '../ajax/db_controller.php';
   $db = new db_Controller;
   $conn = $db->getConnection();
+
 ?>
 
 <div class="container ">
@@ -17,7 +19,7 @@
           while($row = $result->fetch_assoc()) {
                       echo '<div class="col-lg-4 col-md-6 mb-4 productCard" id="'.$row['P_ID'].'">';
                       echo '  <div class="card h-100">';
-                      echo '        <a href="#"><img class="card-img-top" src="'.$row['P_Image'].'" alt=""></a>';
+                      echo '        <a href="#"><img class="card-img-top" src="./../images/'.$row['P_ID'].'.jpg" alt=""></a>';
                       echo '        <div class="card-body">';
                       echo '          <h4 class="card-title">';
                       echo '            <a href="#">'.$row['P_Name'].'</a>';

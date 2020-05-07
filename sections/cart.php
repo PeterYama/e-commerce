@@ -1,11 +1,10 @@
 <?php
+require_once '/xampp/htdocs/e-commerce/ajax/db_controller.php';
 session_start();
-$_SESSION['cart'] = array();
-array_push($_SESSION['cart'], $_SESSION['product_id']); 
-array_push($_SESSION['cart'], $_SESSION['product_id']); 
-array_push($_SESSION['cart'], $_SESSION['product_id']); 
-// $_SESSION[cart]=array_diff($_SESSION[cart],$prod_id); to remove
-
+print_r( $_POST['cart']);
+$db = new db_Controller;
+$conn = $db->getConnection();
+$total = null;
 echo '
 <div class="container">
 <div class="row justify-content-center">
@@ -28,20 +27,24 @@ echo '
 			<div class="panel-body">
 		<br>
 	';
-foreach ($_SESSION['cart'] as $item) {
-
-
+foreach ($_POST['cart'] as $item) {
+	$sql  = "SELECT * FROM `tabproduct` where P_ID = " . $item;
+	$result = $conn->query($sql);
+	$row = $result->fetch_assoc();
+	$total += $row['P_Price'];
 	echo '
 	<div class="row">
 				<div class="col">
-					<img class="img-responsive" src="http://placehold.it/100x70">
+					<img class="img-responsive mw-85 mh-85" 
+					src="./../images/'.$row['P_ID'].'.jpg">
 				</div>
 				<div class="col">
-					<h4 class="product-name"><strong>Product name</strong></h4><h4><small>Product description</small></h4>
+					<h4 class="product-name"><strong>' . $row['P_Name'] . '</strong></h4><h4>
+					<small>' . $row['P_Description'] . '</small></h4>
 				</div>
 				<div class="col">
 					<div class="col text-right">
-						<h6><strong>25.00 <span class="text-muted">x</span></strong></h6>
+						<h6><strong>$' . $row['P_Price'] . '.00<span class="text-muted">x</span></strong></h6>
 					</div>
 				<div class="col">
 						<input type="text" class="form-control input-sm" value="1">
@@ -74,7 +77,7 @@ echo '
 	<div class="panel-footer">
 		<div class="row text-center">
 						<div class="col">
-							<h4 class="text-right">Total <strong>$50.00</strong></h4>
+							<h4 class="text-right">Total <strong>'.$total.'</strong></h4>
 						</div>
 						<div class="col">
 							<button type="button" class="btn btn-success btn-block">
@@ -88,3 +91,4 @@ echo '
 	</div>
 </div>	
 ';
+

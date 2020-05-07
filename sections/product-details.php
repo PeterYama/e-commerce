@@ -20,7 +20,7 @@ if ($product_result->num_rows > 0) {
     echo '
               <div class="container ">
                 <div class="card mt-4">
-                  <img class="img-responsive mx-auto"  src="' . $row['P_Image'] . '" alt="">
+                  <img class="img-responsive mx-auto"  src="./../images/'.$row['P_ID'].'.jpg" alt="">
                   <div class="card-body">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">
