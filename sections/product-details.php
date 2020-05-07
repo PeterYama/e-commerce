@@ -1,4 +1,5 @@
 <?php
+require_once './../sections/head.php';
 // grab the product_id that was posted
 // add to Session
 // get the product ID that the user has clicked 
@@ -41,9 +42,9 @@ if ($product_result->num_rows > 0) {
                         </div>
                         <br>
                         <div class="container d-flex justify-content-center mt-3">
-                        <a href="#" class="btn btn-info btn-lg">
+                        <button class="btn btn-info btn-lg" id="cart-btn">
                           <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                        </a>
+                        </button>
                         </div>
                       </div>
                     </div>

@@ -16,7 +16,9 @@ section {
   background-color: #373B44;
   height: 100vh;
   background-image:url(./../images/login-background.png);
-  
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   }
 
   section:nth-of-type(2n) {
