@@ -10,6 +10,7 @@
 <!-- Bootstrap CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
 <link rel="stylesheet" href="/e-commerce/css/landing.css" class="ref">
+<link rel="stylesheet" href="/e-commerce/css/products.css" class="ref">
 <link rel="stylesheet" href="/e-commerce/css/login.css" class="ref">
 <link rel="stylesheet" href="/e-commerce/css/footer.css" class="ref">
 <link rel="stylesheet" href="/e-commerce/css/product-detail.css" class="ref">

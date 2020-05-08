@@ -30,8 +30,14 @@
   </div>
 </nav>
 
+<!-- main content start -->
+<div id="result">
+
 <!-- Page Content -->
 <div class="container p-3 title text-center">
   <h2 class="">AG Store</h2>
 </div>
-<!-- /.container -->
+
+
+
+

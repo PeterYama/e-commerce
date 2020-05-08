@@ -11,11 +11,6 @@ class db_Controller extends db_Connection
         $this->conn = $this->getConnection();
     }
 
-    // Products 
-    public function getProducts()
-    {
-    }
-
     public function writeStmt($email, $password)
     {
         $stmt = $this->conn->prepare("insert into users (Email, Password) VALUES (?, ?)");
