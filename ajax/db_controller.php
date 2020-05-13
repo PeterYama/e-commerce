@@ -37,6 +37,8 @@ class db_Controller extends db_Connection
         if ($result->num_rows > 0){
            $row = $result->fetch_assoc();
                 // check user credentials
+                echo 'user input: <br>' . $password;
+                echo 'pass from the data base <br>' . $row['Password'] ;
                 if (password_verify($password,$row['Password'])) {
                     echo "Welcome " . $row['Email'];
                     header("Location: http://localhost/e-commerce/sections/products.php");

@@ -11,8 +11,8 @@
 		function __construct(){
 			$this->dbhost = 'localhost';
 			$this->dbuser = 'root';
-			$this->dbpass = '123';
-			$this->dbname = 'ag_games';
+			$this->dbpass = '';
+			$this->dbname = 'e_commerce_db';
 			$this->getConnection();
 		}
 

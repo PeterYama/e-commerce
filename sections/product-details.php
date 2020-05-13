@@ -5,7 +5,9 @@
 //  run a query where product number = user selection
 session_start();
 // $value = $_POST['product_id'];
-require_once '/xampp/htdocs/e-commerce/ajax/db_controller.php';
+require_once '../ajax/db_controller.php';
+$_SESSION['product_id'] =$_POST['product_id'];
+// require_once '/xampp/htdocs/e-commerce/ajax/db_controller.php';
 $db = new db_Controller;
 $conn = $db->getConnection();
 $product_sql  = "SELECT * FROM `tabproduct` where P_ID = " . $_SESSION['product_id'];
@@ -15,10 +17,9 @@ if ($product_result->num_rows > 0) {
   while ($row = $product_result->fetch_assoc()) {
     // Display the selected product
     echo '
-    
               <div class="container" id="result">
                 <div class="card mt-4">
-                  <img class="img-responsive mx-auto"  src="./../images/'.$row['P_ID'].'.jpg" alt="">
+                  <img class="img-responsive mx-auto"  src="./../images/'.$row['P_Image'].'.jpg" alt="">
                   <div class="card-body">
                   <div class="row">
                     <div class="col-md-6 col-sm-12">

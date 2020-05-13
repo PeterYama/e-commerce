@@ -28,7 +28,7 @@ $(document).ready(function () {
     $(".productCard").click(function () {
         id = $(this).attr('id');
         sessionStorage.setItem("product_id", id);
-        $.post('/e-commerce/sections/test.php', {
+        $.post('/e-commerce/sections/product-details.php', {
             'product_id': id,
         }, function (result) {
             $("#result").replaceWith(result);;

@@ -1,7 +1,6 @@
 <?php
-require_once '/xampp/htdocs/e-commerce/ajax/db_controller.php';
+require_once '../ajax/db_controller.php';
 session_start();
-print_r( $_POST['cart']);
 $db = new db_Controller;
 $conn = $db->getConnection();
 $total = null;
@@ -36,7 +35,7 @@ foreach ($_POST['cart'] as $item) {
 	<div class="row">
 				<div class="col">
 					<img class="img-responsive mw-85 mh-85" 
-					src="./../images/'.$row['P_ID'].'.jpg">
+					src="./../images/'.$row['P_Image'].'.jpg">
 				</div>
 				<div class="col">
 					<h4 class="product-name"><strong>' . $row['P_Name'] . '</strong></h4><h4>
@@ -51,7 +50,7 @@ foreach ($_POST['cart'] as $item) {
 					</div>
 					<div class="col">
 						<button type="button" class="btn btn-link btn-xs">
-							<span class="glyphicon glyphicon-trash"> </span>
+							<span class="glyphicon glyphicon-trash">Delete Product</span>
 						</button>
 					</div>
 				</div>

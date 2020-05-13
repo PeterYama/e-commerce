@@ -58,7 +58,7 @@
         while($row = $result->fetch_assoc()) {
                     echo '<div class="col-lg-4 col-md-6 mb-4 productCard" id="'.$row['P_ID'].'">';
                     echo '  <div class="card h-100">';
-                    echo '        <a href="#"><img class="card-img-top" src="./../images/'.$row['P_ID'].'.jpg" alt=""></a>';
+                    echo '        <a href="#"><img class="card-img-top" src="./../images/'.$row['P_Image'].'.jpg" alt=""></a>';
                     echo '        <div class="card-body">';
                     echo '          <h4 class="card-title">';
                     echo '            <a href="#">'.$row['P_Name'].'</a>';

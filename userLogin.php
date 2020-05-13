@@ -10,7 +10,7 @@ foreach ($_POST as $key => $value) {
     echo $key . ": " . $value . "<br />";
     $userName = $_POST['userName'];
     $userPassword = $_POST['userPassword'];
-    $checkBox = $_POST['checkBox'];  
+    // $checkBox = $_POST['checkBox'];  
 }
 
 // check if user exist in the database, if Yes 
