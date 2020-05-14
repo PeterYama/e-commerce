@@ -18,8 +18,9 @@ header {
   font-family: 'Lato', sans-serif;
 }
 
-.body{
+body{
   font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
 }
 
 header video {

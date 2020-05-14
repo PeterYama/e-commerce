@@ -6,20 +6,16 @@ $conn = $db->getConnection();
 $total = null;
 echo '
 <div class="container">
-<div class="row justify-content-center">
+<div class="row d-flex justify-content-center">
 	<div class="col-xs-8">
 		<div class="panel panel-info">
 			<div class="panel-heading">
 				<div class="panel-title">
 					<div class="row justify-content-between">
-						<div class="col-6">
+						<div class="col-12">
 							<h5><span class="glyphicon glyphicon-shopping-cart"></span> Shopping Cart</h5>
 						</div>
-						<div class="col-6">
-							<button type="button" class="btn btn-primary btn-sm btn-block">
-								<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
-							</button>
-						</div>
+						
 					</div>
 				</div>
 			</div>
@@ -38,21 +34,26 @@ foreach ($_POST['cart'] as $item) {
 					src="./../images/'.$row['P_Image'].'.jpg">
 				</div>
 				<div class="col">
-					<h4 class="product-name"><strong>' . $row['P_Name'] . '</strong></h4><h4>
-					<small>' . $row['P_Description'] . '</small></h4>
-				</div>
-				<div class="col">
-					<div class="col text-right">
-						<h6><strong>$' . $row['P_Price'] . '.00<span class="text-muted">x</span></strong></h6>
-					</div>
-				<div class="col">
-						<input type="text" class="form-control input-sm" value="1">
-					</div>
-					<div class="col">
-						<button type="button" class="btn btn-link btn-xs">
-							<span class="glyphicon glyphicon-trash">Delete Product</span>
+					<h4 class="product-name"><strong>' . $row['P_Name'] . '</strong></h4>
+					<h4 class="mt-4">
+					<small>' . $row['P_Description'] . '</small>
+					</h4>
+						<div class="row">
+							<div class="col">
+								<h6 class="mt-4"><strong>$' . $row['P_Price'] . '.00<span class="text-muted"> AUD</span></strong></h6>
+							</div>
+							<div class="row">
+								<div class="col">
+									<p class="mt-4">Quantity</p>
+								</div>
+								<div class="col">
+									<input  type="text" class="form-control input-sm mt-3" value="1">
+								</div>
+							</div>
+						</div>
+						<button type="button" class="btn btn-primary btn-link btn-xs mt-4 right">
+							<span class="glyphicon glyphicon-trash text-white">Delete Product</span>
 						</button>
-					</div>
 				</div>
 	</div>
 	<br>
@@ -82,7 +83,11 @@ echo '
 							<button type="button" class="btn btn-success btn-block">
 								Checkout
 							</button>
+							<button type="button" class="btn btn-primary btn-sm btn-block">
+								<span class="glyphicon glyphicon-share-alt"></span> Continue shopping
+							</button>
 						</div>
+						
 					</div>
 				</div>
 			</div>

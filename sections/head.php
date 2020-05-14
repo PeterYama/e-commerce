@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="/e-commerce/css/login.css" class="ref">
 <link rel="stylesheet" href="/e-commerce/css/footer.css" class="ref">
 <link rel="stylesheet" href="/e-commerce/css/product-detail.css" class="ref">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Gugi&display=swap" rel="stylesheet">
