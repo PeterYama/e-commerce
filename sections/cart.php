@@ -4,14 +4,15 @@ session_start();
 $db = new db_Controller;
 $conn = $db->getConnection();
 $total = null;
-echo '
-<div class="container mt-5">
-<div class="row d-flex justify-content-center">
-	<div class="col-xs-8">
-		<div class="panel panel-info mx-5 mt-5">
-			<div class="panel-body mx-5">
-	';
+
 if(isset($_POST['cart'])){
+	echo '
+	<div class="container mt-5" >
+	<div class="row d-flex justify-content-center" id="result">
+		<div class="col-xs-8">
+			<div class="panel panel-info mx-5 mt-5">
+				<div class="panel-body mx-5">
+		';
 	foreach ($_POST['cart'] as $item) {
 		$sql  = "SELECT * FROM `tabproduct` where P_ID = " . $item;
 		$result = $conn->query($sql);
@@ -74,7 +75,7 @@ echo '
 							<button id="check-out-btn"type="button" class="btn btn-success btn-md btn-block w-50 mb-2">
 								Checkout
 							</button>
-							<button type="button" class="btn btn-primary btn-md btn-block w-50 mb-2">
+							<button id="continue-shopping-btn" type="button" class="btn btn-primary btn-md btn-block w-50 mb-2">
 								Continue shopping
 							</button>
 						</div>

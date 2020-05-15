@@ -12,6 +12,11 @@ $(document).ready(function () {
         $('#cart-icon').show();
     }
 
+    $(document).on('click','#continue-shopping-btn',function(event){
+        event.preventDefault();
+        location.reload();
+    })
+
     $(document).on('click','#check-out-btn',function(event){
         event.preventDefault();
         $('.panel-info').replaceWith(
@@ -80,78 +85,67 @@ $(document).ready(function () {
         $.post('/e-commerce/sections/product-details.php', {
             'product_id': id,
         }, function (result) {
-            $("#result").replaceWith(result);;
+            $("#result").replaceWith(result);
         });
     });
 
     $(document).on('click', "#Adventure", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Adventure'";
-        $.post('/e-commerce/sections/products.php', {
+        $.post('/e-commerce/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
-            $(".navbar").remove();
-            $('footer').remove();
-            $("#result").replaceWith(result);
+            $("#products-row").replaceWith(result);
         });
     });
 
     $(document).on('click', "#FPS", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'FPS'";
-        $.post('/e-commerce/sections/products.php', {
+        $.post('/e-commerce/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
-            $(".navbar").remove();
-            $('footer').remove();
-            $("#result").replaceWith(result);
+            $("#products-row").replaceWith(result);
         });
     });
 
     $(document).on('click', "#Horror", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Horror'";
-        $.post('/e-commerce/sections/products.php', {
+        $.post('/e-commerce/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
-            $(".navbar").remove();
-            $('footer').remove();
-            $("#result").replaceWith(result);
+            $("#products-row").replaceWith(result);
         });
     });
 
     $(document).on('click', "#RPG", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'RPG'";
-        $.post('/e-commerce/sections/products.php', {
+        $.post('/e-commerce/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
-            $(".navbar").remove();
-            $('footer').remove();
-            $("#result").replaceWith(result);
+            $("#products-row").replaceWith(result);
         });
     });
 
     $(document).on('click', "#Sport", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Sport'";
-        $.post('/e-commerce/sections/products.php', {
+        $.post('/e-commerce/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
-            $(".navbar").remove();
-            $('footer').remove();
-            $("#result").replaceWith(result);
+            $("#products-row").replaceWith(result);
         });
     });
 
     $(document).on('click', "#Strategy", function () {
+        event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Strategy'";
-        $.post('/e-commerce/sections/products.php', {
+        $.post('/e-commerce/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
-            $(".navbar").remove();
-            $('footer').remove();
-            $("#result").replaceWith(result);
+            $("#products-row").replaceWith(result);
         });
     });
     
