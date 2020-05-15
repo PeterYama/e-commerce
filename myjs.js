@@ -6,6 +6,11 @@ var cartArray = [];
 // pass it to product details and display more details about a product
 $(document).ready(function () {
 
+    $(document).on('click','.btn-retister', function(event){
+        event.preventDefault();
+        console.log('register clicked');
+    })
+
     $(document).on('click', '#cart-btn', function () {
         if (sessionStorage.getItem("cart") == null) {
             cartArray.push(sessionStorage.getItem("product_id"));
@@ -48,7 +53,8 @@ $(document).ready(function () {
     });
 
 
-    $(document).on('click', "#Adventure", function () {
+    $(document).on('click', "#Adventure", function (event) {
+        event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Adventure'";
         $.post('/e-commerce/sections/products.php', {
             'sql': sql,
@@ -59,7 +65,8 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', "#FPS", function () {
+    $(document).on('click', "#FPS", function (event) {
+        event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'FPS'";
         $.post('/e-commerce/sections/products.php', {
             'sql': sql,
@@ -70,7 +77,8 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', "#Horror", function () {
+    $(document).on('click', "#Horror", function (event) {
+        event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Horror'";
         $.post('/e-commerce/sections/products.php', {
             'sql': sql,
@@ -81,7 +89,8 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', "#RPG", function () {
+    $(document).on('click', "#RPG", function (event) {
+        event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'RPG'";
         $.post('/e-commerce/sections/products.php', {
             'sql': sql,
@@ -92,7 +101,8 @@ $(document).ready(function () {
         });
     });
 
-    $(document).on('click', "#Sport", function () {
+    $(document).on('click', "#Sport", function (event) {
+        event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Sport'";
         $.post('/e-commerce/sections/products.php', {
             'sql': sql,
@@ -114,5 +124,6 @@ $(document).ready(function () {
         });
     });
     
+
 })
 // send the data to product detail .php

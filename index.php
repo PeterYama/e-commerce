@@ -25,10 +25,20 @@
                         name="checkBox" id="customCheck1">
                         <label class="custom-control-label text-white" for="customCheck1">Remember password</label>
                     </div>
-                    <button class="btn btn-lg btn-primary btn-block btn-login 
-                    text-uppercase font-weight-bold mb-2 " type="submit">Sign in</button>
-                    <div class="text-center">
-                        <a class="small" href="#">Forgot password?</a></div>
+
+                    <div class="row">
+                        
+                        <div class="col">
+                        <button class="btn btn-lg btn-primary btn-block btn-login 
+                            text-uppercase font-weight-bold mb-2" type="submit">Sign in
+                        </button>
+                        </div>
+                        <div class="col">
+                        <button class="btn btn-lg btn-secondary btn-block btn-register 
+                            text-uppercase font-weight-bold mb-2 "formaction="./sections/register.php" >Register
+                        </button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
