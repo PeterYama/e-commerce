@@ -6,10 +6,56 @@ var cartArray = [];
 // pass it to product details and display more details about a product
 $(document).ready(function () {
 
-    $(document).on('click','.btn-retister', function(event){
+    var path = window.location.href;
+    if (path.includes('products')){
+        $('#search-bar').show();
+        $('#cart-icon').show();
+    }
+
+    $(document).on('click','#check-out-btn',function(event){
         event.preventDefault();
-        console.log('register clicked');
+        $('.panel-info').replaceWith(
+        '<strong>Processing your order. Thank you =)<strong><br>' 
+        );
     })
+
+    $(document).on('click','#cart-icon',function(e){
+        if (sessionStorage.getItem("cart") == null) {
+            window.sessionStorage.setItem("cart", JSON.stringify(cartArray))
+        } else {
+            cartArray = (JSON.parse(window.sessionStorage.getItem('cart')));
+            window.sessionStorage.setItem("cart", JSON.stringify(cartArray))
+        }
+        $.post('/e-commerce/sections/cart.php', {
+            'cart': cartArray,
+        }, function (result) {
+            $("#result").replaceWith(result);
+            if(cartArray.length === 0){
+                $('#cart-footer').hide();
+                $('#friendly-message').show();
+                $('footer').css("bottom", "0");
+            }
+        });
+    });
+
+    $(document).on('click', "#cart-delete-btn", function (event) {
+        event.preventDefault();
+        var ProductID = $(this).attr('value');
+        cartArray = (JSON.parse(window.sessionStorage.getItem('cart')));
+        cartArray.splice($.inArray(ProductID,cartArray),1);
+        window.sessionStorage.setItem("cart", JSON.stringify(cartArray))
+        console.log(cartArray);
+        $.post('/e-commerce/sections/cart.php', {
+            'cart': cartArray,
+        }, function (result) {
+            $("#Product_"+ ProductID).remove();
+            $("#total").text('Refresh to update');
+            if(cartArray.length === 0){
+                $('#cart-footer').hide();
+                $('#friendly-message').show();
+            }
+        });
+    });
 
     $(document).on('click', '#cart-btn', function () {
         if (sessionStorage.getItem("cart") == null) {
@@ -24,8 +70,6 @@ $(document).ready(function () {
             'cart': cartArray,
         }, function (result) {
             $("#result").replaceWith(result);
-            $('footer').remove();
-            $('footer').css("position", " fixed");
             $('footer').css("bottom", "0");
         });
     });
@@ -39,19 +83,6 @@ $(document).ready(function () {
             $("#result").replaceWith(result);;
         });
     });
-
-    //user should add the product to cart on every product click
-    //cart page should render all the prodcuts that the user have selected
-    //user can delete and add new items to the cart
-
-
-    $("#myInput").on("keyup", function () {
-        var value = $(this).val().toLowerCase();
-        $(".dropdown-menu li").filter(function () {
-            $(this).toggle($(this).text().toLowerCase().indexOf(value))
-        });
-    });
-
 
     $(document).on('click', "#Adventure", function (event) {
         event.preventDefault();
@@ -126,4 +157,3 @@ $(document).ready(function () {
     
 
 })
-// send the data to product detail .php

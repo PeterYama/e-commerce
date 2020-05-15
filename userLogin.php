@@ -14,7 +14,7 @@ $result = $stmt->get_result();
 
 if ($result->num_rows > 0) {
     $row = $result->fetch_assoc();
-    // check user credentials
+    // check user credentialscartArray
     if (password_verify($password, $row['Password'])) {
         echo "Welcome " . $row['Email'];
         header("Location: http://localhost/e-commerce/sections/products.php");

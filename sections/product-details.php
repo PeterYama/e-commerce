@@ -19,16 +19,16 @@ if ($product_result->num_rows > 0) {
     echo '
               <div class="container" id="result">
                 <div class="card mt-4">
-                  <img class="img-responsive mx-auto"  src="./../images/'.$row['P_Image'].'.jpg" alt="">
-                  <div class="card-body">
-                  <div class="row">
+                  <img class="img-responsive mx-auto mt-5"  src="./../images/'.$row['P_Image'].'.jpg" alt="">
+                  <div class="card-body my-4 ml-5">
+                  <div class="row mt-5">
                     <div class="col-md-6 col-sm-12">
                       <h3 class="card-title">' . $row['P_Name'] . '</h3>
                       <h4>$' . $row['P_Price'] . '.00</h4>
                       <p class="card-text pr-5">' . $row['P_Description'] . '</p>
                     </div>
                     <div class="col-md-6 col-sm-12">
-                      <div class="row">
+                      <div class="row ml-3">
                         <div class="col-md-6 mt-3">
                           <p>Price</p>
                           <p>Stock</p>
