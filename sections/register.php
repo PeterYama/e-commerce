@@ -51,7 +51,7 @@
                                     </div>
                                     <div class="form-group">
                                         <select name="secretQuestion" class="form-control">
-                                            <option class="hidden"  selected disabled>Please select your Sequrity Question</option>
+                                            <option class="hidden"  selected disabled>Please select your Security Question</option>
                                             <option value="1">What is your Birthdate?</option>
                                             <option value="2">What is Your old Phone Number</option>
                                             <option value="3">What is your Pet Name?</option>
