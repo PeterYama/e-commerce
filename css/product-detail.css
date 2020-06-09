@@ -5,3 +5,17 @@
     align-items: flex-end;
     justify-content: right;
 }
+.fav-button{
+    background-color:  #ffe680;
+    border: none;
+    color: white;
+    padding: 11px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 50%;
+}
+
+.material-icons.md-36 { font-size: 36px; }

@@ -43,7 +43,13 @@ if ($product_result->num_rows > 0) {
                         <div class="container d-flex justify-content-center mt-3">
                         <button class="btn btn-info btn-lg" id="cart-btn">
                           <span class="glyphicon glyphicon-shopping-cart"></span> Add to Cart
-                        </button>
+                        </div>
+                        <div class="container mt-3 text-center">
+                        <br>
+                        <button class="btn btn-small fav-button" id="fav-btn">
+                            <span class="material-icons md-36">
+                              star_rate
+                            </span></button> Add to Wish List
                         </div>
                       </div>
                     </div>
@@ -84,4 +90,3 @@ if ($product_result->num_rows > 0) {
 } else {
   echo "0 results";
 }
-?>

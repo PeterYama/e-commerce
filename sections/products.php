@@ -14,10 +14,10 @@ $sql = "SELECT * FROM `tabproduct`";
 //category search button 
   echo '
   <div class="container">
-    <div class="row text-right mb-5">
-      <div class="col">
+    <div class="row  mb-5">
+      <div class="col text-left">
         <div class="dropdown">
-          <button class="btn btn-primary dropdown-toggle" type="button" data-toggle="dropdown">Categories
+          <button class="btn btn-default text-dark dropdown-toggle" type="button" data-toggle="dropdown"><b>Categories</b>
             <span class="caret"></span></button>
             <ul class="dropdown-menu">
             <li><a href="" id="Adventure">Adventure</a></li>
@@ -26,6 +26,27 @@ $sql = "SELECT * FROM `tabproduct`";
             <li><a href="" id="RPG">RPG</a></li>
             <li><a href="" id="Sport">Sport</a></li>
             <li><a href="" id="Strategy">Strategy</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="col text-center">
+        <div>
+          <button class="btn btn-default" id="Promotion" type="button">Promotion
+          </button>
+        </div>
+      </div>
+      <div class="col text-right">
+        <div class="dropdown">
+          <button class="btn btn-default text-dark border-black dropdown-toggle" type="button" data-toggle="dropdown">
+          <span class="material-icons">
+          sort
+          </span></button>
+            <ul class="dropdown-menu">
+            <li><a href="" id="Cheaper">Price, low to high</a></li>
+            <li><a href="" id="Expensive">Price, high to low</a></li>
+            <li><a href="" id="Newer">Most recent</a></li>
+            <li><a href="" id="Clasics">Oldest</a></li>
+            <li><a href="" id="Name">Name</a></li>
           </ul>
         </div>
       </div>

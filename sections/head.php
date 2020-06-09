@@ -5,11 +5,20 @@
 <!-- load J-Query before use -->
 <script src="https://code.jquery.com/jquery-3.5.0.js" integrity="sha256-r/AaFHrszJtwpe+tHyNi/XCfMxYpbsRg2Uqn0x3s2zc=" crossorigin="anonymous"></script>
 <!-- JQuery comands here  -->
-<script type="text/javascript" src="/e-commerce/myjs.js" defer="defer"></script>
+<script type="text/javascript" src="/e-commerce/myjs.js"></script>
 <!-- Popper -->
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 <!-- Bootstrap Script -->
 <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+<!-- Social Media Buttons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<!-- Meta Tags -->
+<meta charset="UTF-8">
+<meta name="description" content="Game Store">
+<meta name="keywords" content="Games, Playstation , X-Box, X Box 360, New Titles, Second Hand Games, God of War">
+<meta name="author" content="Peter Yamamoto Alves">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- Bootstrap CSS -->
 <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
@@ -23,6 +32,9 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+
+<!-- Google Ads Link -->
+<script data-ad-client="ca-pub-1839954864341975" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
 
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Gugi&display=swap" rel="stylesheet">

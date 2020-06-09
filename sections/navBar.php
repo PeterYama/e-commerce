@@ -11,7 +11,7 @@
 
     <!-- Search form -->
     <div class="w-50">
-      <input id="search-bar"  class="form-control" style="display:none;" type="text" placeholder="Search" aria-label="Search">
+      <input id="search-bar" class="form-control" name="userSelection" style="display:none;" type="text" placeholder="Search" aria-label="Search">
     </div>
     <a id="cart-icon" href="#" style="color: white; display:none;" class="material-icons xxxlarge" >
       shopping_cart
@@ -23,6 +23,6 @@
 <div id="result">
 
   <!-- Page Content -->
-  <div class="container p-3 title text-center">
+  <div class="container-fluid p-3 title text-center mb-5" style="background-color: #efefef">
     <h2 class="">AG Store</h2>
   </div>
