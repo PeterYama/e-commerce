@@ -13,6 +13,10 @@ $(document).ready(function () {
         $('#cart-icon').show();
     }
 
+    if ( window.history.replaceState ) {
+        window.history.replaceState( null, null, window.location.href );
+      }
+
     $(document).on('click','#continue-shopping-btn',function(event){
         event.preventDefault();
         location.reload();
@@ -93,6 +97,22 @@ $(document).ready(function () {
             $('footer').css("bottom", "0");
         });
     });
+
+    $(document).on('click','#profile-icon',function(e){
+        $.get('/e-commerce/sections/loginPage.php', function (result) {
+            $("#result").replaceWith(result);
+            $('#search-bar').hide();
+            $('#cart-icon').hide();
+        });
+    });
+    
+    $(document).on('click','#leave-review-btn',function(e){
+        e.preventDefault();
+        $.get('/e-commerce/sections/productsReview.php', function (result) {
+            $("#product-review-tag").replaceWith(result);
+        });
+    });
+
 
     $(document).on('click','#cart-icon',function(e){
         if (sessionStorage.getItem("cart") == null) {

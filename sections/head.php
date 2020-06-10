@@ -32,9 +32,8 @@
 <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
       rel="stylesheet">
 <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
-
-<!-- Google Ads Link -->
-<script data-ad-client="ca-pub-1839954864341975" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- test -->
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
 
 <!-- fonts -->
 <link href="https://fonts.googleapis.com/css?family=Gugi&display=swap" rel="stylesheet">

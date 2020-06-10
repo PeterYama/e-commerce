@@ -14,13 +14,12 @@
                 <div class="row">
                     <div class="col mt-5">
                             <h1>User already exist<br></h1>
-                            <h2 class="mt-5">Redirecting to login page <br></h2>
+                            <h2 class="mt-5">Try again <br></h2>
                             <i class="w3-xxxlarge material-icons w3-spin mt-5" 
                             style="color:black;">refresh</i>
                     </div>
                 </div>
             </div>';
-            header("Refresh: 3;URL=http://localhost/e-commerce/index.php");
         }else{
             //user don't exist, create a new record
             //create statment
@@ -49,13 +48,12 @@
                     <div class="row">
                         <div class="col mt-5">
                                 <h1>Success !<br></h1>
-                                <h2 class="mt-5">Redirecting to the Login Page<br></h2>
+                                <h2 class="mt-5">You are now registered in our database<br></h2>
                                 <i class="w3-xxxlarge material-icons w3-spin mt-5" 
                                 style="color:black;">refresh</i>
                         </div>
                     </div>
                 </div>';
-                header("Refresh: 3;URL=http://localhost/e-commerce/index.php");
                 $stmt->close();
             } catch (\Throwable $e) {
                 echo "error: " . $e->getMessage();

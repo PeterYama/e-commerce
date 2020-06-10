@@ -6,12 +6,14 @@
 session_start();
 // $value = $_POST['product_id'];
 require_once '../ajax/db_controller.php';
-$_SESSION['product_id'] =$_POST['product_id'];
+$_SESSION['product_id'] = $_POST['product_id'];
 // require_once '/xampp/htdocs/e-commerce/ajax/db_controller.php';
 $db = new db_Controller;
 $conn = $db->getConnection();
 $product_sql  = "SELECT * FROM `tabproduct` where P_ID = " . $_SESSION['product_id'];
 $product_result = $conn->query($product_sql);
+$review_sql  = "SELECT * FROM `tabreview` where P_ID = " . $_SESSION['product_id'];
+$review_result = $conn->query($review_sql);
 if ($product_result->num_rows > 0) {
   // output data of each row
   while ($row = $product_result->fetch_assoc()) {
@@ -19,7 +21,7 @@ if ($product_result->num_rows > 0) {
     echo '
               <div class="container" id="result">
                 <div class="card mt-4">
-                  <img class="img-responsive mx-auto mt-5"  src="./../images/'.$row['P_Image'].'.jpg" alt="">
+                  <img class="img-responsive mx-auto mt-5"  src="./../images/' . $row['P_Image'] . '.jpg" alt="">
                   <div class="card-body my-4 ml-5">
                   <div class="row mt-5">
                     <div class="col-md-6 col-sm-12">
@@ -58,31 +60,44 @@ if ($product_result->num_rows > 0) {
               </div>
             ';
 
-    $review_sql  = "SELECT * FROM `tabreview` where P_ID = " . $_SESSION['product_id'];
-    $review_result = $conn->query($review_sql);
+
     //Display Product review
     echo '
-        <div class="card card-outline-secondary my-4">
+        <div class="card card-outline-secondary my-4" id="product-review-tag">
         <div class="card-header">
           Product Reviews
           <br>
           <br>
         ';
-    // require __DIR__ . "/divider.php";
+
     while ($review_row = $review_result->fetch_assoc()) {
       echo '
           </div>
-          <div class="card-body">
+            <div class="card-body">
      
             <p>' . $review_row['R_Text'] . '</p>
-            <small class="text-muted">' . $review_row['R_UserName'] . '</small>
-            <span class="text-warning">&#9733; &#9733; &#9733; &#9733; &#9734;</span>
-            4.0 stars
-            <hr>
-          ';
+            <p class="text-muted">' . $review_row['R_UserName'] . '</p>';
+      switch ($review_row['R_Stars']) {
+        case 1:
+          echo '<span class="text-warning"> &#9733;</span> 1 star<hr>';
+          break;
+        case 2:
+          echo '<span class="text-warning"> &#9733; &#9733;</span> 2 stars<hr>';
+          break;
+        case 3:
+          echo '<span class="text-warning"> &#9733; &#9733; &#9733;</span> 3 stars<hr>';
+          break;
+        case 4:
+          echo '<span class="text-warning"> &#9733; &#9733; &#9733; &#9733;</span> 4 stars<hr>';
+          break;
+        case 5:
+          echo '<span class="text-warning"> &#9733; &#9733; &#9733; &#9733; &#9733;</span> 5 stars<hr>';
+          break;
+      }
+      
     };
     echo '
-            <a href="#" class="btn btn-success">Leave a Review</a>
+            <button class="btn btn-success " id="leave-review-btn" >Leave a Review</button>
             </div>
           </div>
         ';

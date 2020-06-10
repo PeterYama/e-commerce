@@ -1,10 +1,8 @@
 <?php
-echo 'is set = ' . isset($_POST['favSession']);
 require_once '../ajax/db_controller.php';
 session_start();
 $db = new db_Controller;
 $conn = $db->getConnection();
-
 
 if(isset($_POST['favSession'])){
     echo '
@@ -47,7 +45,6 @@ if(isset($_POST['favSession'])){
         ';
     }
 }
-
 echo '
 	<div class="container d-flex justify-content-center text-center mt-5" >
 		<div class="row" id="fav-empty-message" style="display:none;">

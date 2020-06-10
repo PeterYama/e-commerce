@@ -1,7 +1,6 @@
 <?php
 session_start();
-require_once './sections/navBar.php';
-require_once 'ajax/db_controller.php';
+require_once '../ajax/db_controller.php';
 $db = new db_Controller;
 $conn = $db->getConnection();
 $user = $_POST['userName'];
@@ -17,7 +16,7 @@ if ($result->num_rows > 0) {
     // check user credentialscartArray
     if (password_verify($password, $row['Password'])) {
         echo "Welcome " . $row['Email'];
-        header("Location: http://localhost/e-commerce/sections/products.php");
+        header("Location: /e-commerce/sections/products.php");
         exit();
     } else {
         echo '
@@ -31,7 +30,7 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
             </div>';
-        header("Refresh: 3;URL=http://localhost/e-commerce/index.php");
+        header("Refresh: 3; /e-commerce/index.php");
     }
     $stmt->close();
 } else {
@@ -49,5 +48,5 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
             </div>';
-    header("Refresh: 3;URL=http://localhost/e-commerce/index.php");
+    header("Refresh: 3; /e-commerce/index.php");
 }
