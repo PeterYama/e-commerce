@@ -1,4 +1,4 @@
 <?php
- header("Location: /e-commerce/sections/products.php");
+ header("Location: /sections/products.php");
  exit();
 ?>

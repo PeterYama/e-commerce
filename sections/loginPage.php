@@ -6,15 +6,16 @@
             <div class="col-md-12">
                 <h3 class="login-heading text-white pl-3 pb-3">Login</h3>
                 <form id="target" action="userLogin.php" method="post">
+
                     <div class="form-label-group">
                         <input type="email" id="inputEmail" name="userName" 
-                        class="form-control" placeholder="Email address" required autofocus>
+                        class="form-control" placeholder="Email address" autofocus>
                         <label for="inputEmail">Email address</label>
                     </div>
 
                     <div class="form-label-group">
                         <input type="password" name="userPassword" 
-                        class="form-control " placeholder="Password" required>
+                        class="form-control " placeholder="Password" >
                         <label for="inputPassword">Password</label>
                     </div>
 

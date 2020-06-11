@@ -1,5 +1,5 @@
 <?php
-    require_once __DIR__ .'\navBar.php';
+    require_once 'navBar.php';
     require_once '../ajax/db_controller.php';
     // echo 'on register page <br>' . $_POST['userName'];
     echo '

@@ -4,7 +4,7 @@ $db = new db_Controller;
 $conn = $db->getConnection();
 $sql = $_POST['sql'];
 $result = $conn->query($sql);
-if ($result->num_rows > 0) {
+if (($result->num_rows > 0) || ($result)) {
   // output data of each row
 echo '<div class="row" id="products-row">';
   while ($row = $result->fetch_assoc()) {

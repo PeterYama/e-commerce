@@ -11,7 +11,7 @@
 		function __construct(){
 			$this->dbhost = 'localhost';
 			$this->dbuser = 'root';
-			$this->dbpass = '';
+			$this->dbpass = 'Bruchmann123';
 			$this->dbname = 'e_commerce_db';
 			$this->getConnection();
 		}

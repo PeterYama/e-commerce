@@ -53,7 +53,23 @@ if(isset($_POST['cart'])){
 						</div>
 			</div>
 			';
+
 	}
+echo '<div class="container" id="cart-footer">
+				<div class="row" >
+
+					<div class="col d-flex align-items-end flex-column">
+						<h4 class="text-right mx-4" id="total"><strong>Total: </strong>' . $total . ' AUD</h4>
+						<button id="check-out-btn"type="button" class="btn btn-success btn-md btn-block w-50 mb-2">
+							Checkout
+						</button>
+						<button id="continue-shopping-btn" type="button" class="btn btn-primary btn-md btn-block w-50 mb-2">
+							Continue shopping
+						</button>
+					</div>
+				</div>
+			</div>
+';	
 }else{
 	
 echo '

@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/ajax/db_controller.php';
+require_once __DIR__ .'/ajax/db_controller.php';
 $db = new db_Controller;
 $conn = $db->getConnection();
 $sql = $_POST["sql"];

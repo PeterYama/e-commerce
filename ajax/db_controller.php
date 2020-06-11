@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/db_connection.php';
+require_once __DIR__ .'/db_connection.php';
 // Db controller inherits the connection
 class db_Controller extends db_Connection
 {

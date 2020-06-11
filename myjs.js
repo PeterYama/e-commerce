@@ -37,7 +37,7 @@ $(document).ready(function () {
         cartArray.splice($.inArray(ProductID,cartArray),1);
         window.sessionStorage.setItem("favSession", JSON.stringify(cartArray))
         console.log(cartArray);
-        $.post('/e-commerce/sections/cart.php', {
+        $.post('/sections/cart.php', {
             'favSession': cartArray,
         }, function (result) {
             $("#Product_"+ ProductID).remove();
@@ -52,7 +52,7 @@ $(document).ready(function () {
         if (e.keyCode == 13) {
             var userSelection = $("#search-bar ").val();
             e.preventDefault(); 
-            $.post('/e-commerce/searchLogic.php', {
+            $.post('/searchLogic.php', {
                 'sql': "select * from tabproduct WHERE P_Name LIKE '%" +userSelection+"%'",
             }, function (result) {
                 $("#products-row").replaceWith(result);
@@ -69,7 +69,7 @@ $(document).ready(function () {
             favArray.push(sessionStorage.getItem("product_id"));
             window.sessionStorage.setItem("favSession", JSON.stringify(favArray))
         }
-        $.post('/e-commerce/sections/fav.php', {
+        $.post('/sections/fav.php', {
             'favSession': favArray,
         }, function (result) {
             $("#result").replaceWith(result);
@@ -90,7 +90,7 @@ $(document).ready(function () {
             cartArray.push(sessionStorage.getItem("product_id"));
             window.sessionStorage.setItem("cart", JSON.stringify(cartArray))
         }
-        $.post('/e-commerce/sections/cart.php', {
+        $.post('/sections/cart.php', {
             'cart': cartArray,
         }, function (result) {
             $("#result").replaceWith(result);
@@ -99,7 +99,7 @@ $(document).ready(function () {
     });
 
     $(document).on('click','#profile-icon',function(e){
-        $.get('/e-commerce/sections/loginPage.php', function (result) {
+        $.get('/sections/loginPage.php', function (result) {
             $("#result").replaceWith(result);
             $('#search-bar').hide();
             $('#cart-icon').hide();
@@ -108,7 +108,7 @@ $(document).ready(function () {
     
     $(document).on('click','#leave-review-btn',function(e){
         e.preventDefault();
-        $.get('/e-commerce/sections/productsReview.php', function (result) {
+        $.get('/sections/productsReview.php', function (result) {
             $("#product-review-tag").replaceWith(result);
         });
     });
@@ -121,7 +121,7 @@ $(document).ready(function () {
             cartArray = (JSON.parse(window.sessionStorage.getItem('cart')));
             window.sessionStorage.setItem("cart", JSON.stringify(cartArray))
         }
-        $.post('/e-commerce/sections/cart.php', {
+        $.post('/sections/cart.php', {
             'cart': cartArray,
         }, function (result) {
             $("#result").replaceWith(result);
@@ -140,7 +140,7 @@ $(document).ready(function () {
         cartArray.splice($.inArray(ProductID,cartArray),1);
         window.sessionStorage.setItem("cart", JSON.stringify(cartArray))
         console.log(cartArray);
-        $.post('/e-commerce/sections/cart.php', {
+        $.post('/sections/cart.php', {
             'cart': cartArray,
         }, function (result) {
             $("#Product_"+ ProductID).remove();
@@ -155,7 +155,7 @@ $(document).ready(function () {
     $(document).on('click', ".productCard", function (event) {
         id = $(this).attr('id');
         sessionStorage.setItem("product_id", id);
-        $.post('/e-commerce/sections/product-details.php', {
+        $.post('/sections/product-details.php', {
             'product_id': id,
         }, function (result) {
             $("#result").replaceWith(result);
@@ -165,7 +165,7 @@ $(document).ready(function () {
     $(document).on('click', "#Adventure", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Adventure'";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -175,7 +175,7 @@ $(document).ready(function () {
     $(document).on('click', "#FPS", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'FPS'";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -185,7 +185,7 @@ $(document).ready(function () {
     $(document).on('click', "#Horror", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Horror'";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -195,7 +195,7 @@ $(document).ready(function () {
     $(document).on('click', "#RPG", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'RPG'";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -205,7 +205,7 @@ $(document).ready(function () {
     $(document).on('click', "#Sport", function (event) {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Sport'";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -215,7 +215,7 @@ $(document).ready(function () {
     $(document).on('click', "#Strategy", function () {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` where `P_Category` = 'Strategy'";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -225,7 +225,7 @@ $(document).ready(function () {
     $(document).on('click', "#Cheaper", function () {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` WHERE `P_DiscPrice` = 0 ORDER BY `P_DiscPrice` ASC, `P_Price` ASC";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -235,7 +235,7 @@ $(document).ready(function () {
     $(document).on('click', "#Expensive", function () {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` WHERE `P_DiscPrice` = 0 ORDER BY `P_Price` DESC";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -245,7 +245,7 @@ $(document).ready(function () {
     $(document).on('click', "#Newer", function () {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` ORDER BY `tabproduct`.`P_ReleaseDate` DESC";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -255,7 +255,7 @@ $(document).ready(function () {
     $(document).on('click', "#Clasics", function () {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` ORDER BY `tabproduct`.`P_ReleaseDate` ASC";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -265,7 +265,7 @@ $(document).ready(function () {
     $(document).on('click', "#Name", function () {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` ORDER BY `tabproduct`.`P_Name` ASC";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);
@@ -275,7 +275,7 @@ $(document).ready(function () {
     $(document).on('click', "#Promotion", function () {
         event.preventDefault();
         var sql = "SELECT * FROM `tabproduct` Where `P_DiscPrice` > 0 ORDER BY `tabproduct`.`P_Price` ASC, `tabproduct`.`P_DiscPrice` ASC";
-        $.post('/e-commerce/sections/requestProducts.php', {
+        $.post('/sections/requestProducts.php', {
             'sql': sql,
         }, function (result) {
             $("#products-row").replaceWith(result);

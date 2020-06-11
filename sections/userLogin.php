@@ -16,7 +16,7 @@ if ($result->num_rows > 0) {
     // check user credentialscartArray
     if (password_verify($password, $row['Password'])) {
         echo "Welcome " . $row['Email'];
-        header("Location: /e-commerce/sections/products.php");
+        header("Location: /sections/products.php");
         exit();
     } else {
         echo '
@@ -30,7 +30,7 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
             </div>';
-        header("Refresh: 3; /e-commerce/index.php");
+        header("Refresh: 3; /index.php");
     }
     $stmt->close();
 } else {
@@ -48,5 +48,5 @@ if ($result->num_rows > 0) {
                     </div>
                 </div>
             </div>';
-    header("Refresh: 3; /e-commerce/index.php");
+    header("Refresh: 3; /index.php");
 }
